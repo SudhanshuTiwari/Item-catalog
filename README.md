@@ -2,7 +2,7 @@
 
 ```
 A web application that provides a list of items within a variety of categories.
-Integrate third party user registration and authentication. 
+Integrates third party user registration and authentication. 
 Authenticated users have the ability to post, edit, and delete their own items.
 ```
 ## Set Up
