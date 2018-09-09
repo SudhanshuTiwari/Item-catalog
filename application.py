@@ -63,9 +63,28 @@ def newRestaurant():
 
 # Edit restaurant
 
-
 @app.route('/restaurants/<int:restaurant_id>/edit/', methods=['GET', 'POST'])
 def editRestaurant(restaurant_id):
+
+# Delete restaurant
+
+@app.route('/restaurants/<int:restaurant_id>/delete/', methods=['GET', 'POST'])
+def deleteRestaurant(restaurant_id):
+    restaurantToDelete = session.query(
+        Restaurant).filter_by(id=restaurant_id).one()
+    if 'username' not in login_session:
+        return redirect('/login')
+    if restaurantToDelete.user_id != login_session['user_id']:
+        return "<script>{alert('Unauthorized');}</script>"
+    if request.method == 'POST':
+        session.delete(restaurantToDelete)
+        flash('%s Successfully Deleted' % restaurantToDelete.name)
+        session.commit()
+        return redirect(url_for('showRestaurants'))
+    else:
+        return render_template('deleteRestaurant.html',
+                               restaurant=restaurantToDelete)
+
 		
 # end of file
 if __name__ == '__main__':
