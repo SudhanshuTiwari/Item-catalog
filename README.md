@@ -1,4 +1,4 @@
-## Item-catalog
+## Restaurant-Menu-Web-App
 
 ```
 A restaurant menu app where users can add, edit, and delete restaurants and menu items in the restaurants.
