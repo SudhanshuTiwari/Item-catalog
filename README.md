@@ -3,7 +3,7 @@
 ```
 A restaurant menu app where users can add, edit, and delete restaurants and menu items in the restaurants.
 A web application that provides a list of menu items within a variety of restaurants.
-Integrates third party user registration and authentication(Google/Facebook Auth). 
+Integrates third party user registration and SSO authentication(Google/Facebook Auth). 
 Authenticated users have the ability to post, edit, and delete their own items.
 ```
 
